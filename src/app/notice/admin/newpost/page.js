@@ -9,7 +9,7 @@ export default function Notice() {
     return (
         <div>
             <h4>공지사항 게시판</h4>
-            <div>
+            <div className="newpost-items">
                 <input
                     onChange={(e) => setTitle(e.target.value)}
                     placeholder="공지사항 제목"
@@ -19,6 +19,7 @@ export default function Notice() {
                     placeholder="공지사항 내용"
                 />
                 <button
+                    className="text-white bg-green-700 hover:bg-green-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 mr-8"
                     onClick={() => {
                         fetch("/api/notice/new", {
                             method: "POST",
@@ -35,7 +36,7 @@ export default function Notice() {
                                 response.json();
                             })
                             .then((result) => {
-                                if (result.success = true) {
+                                if ((result.success = true)) {
                                     console.log(result.message);
                                 } else {
                                     console.log(result.message);

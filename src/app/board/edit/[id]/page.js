@@ -13,11 +13,12 @@ export default function Edit(props) {
 
     return (
         <div className="edit-page">
-            <h4>수정페이지</h4>
+            <h4>자유게시판 수정페이지</h4>
             <form action="/api/post/edit" method="POST">
                 <div className="form-data">
                     제목:{" "}
                     <input
+                        className="title"
                         type="text"
                         name="title"
                         defaultValue={details.title}
@@ -26,6 +27,7 @@ export default function Edit(props) {
                 <div className="form-data">
                     내용:{" "}
                     <input
+                        className="content"
                         type="text"
                         name="content"
                         defaultValue={details.content}
@@ -34,6 +36,7 @@ export default function Edit(props) {
                 <div className="form-data">
                     작성자:{" "}
                     <input
+                        className="author"
                         type="text"
                         name="author"
                         defaultValue={details.author}

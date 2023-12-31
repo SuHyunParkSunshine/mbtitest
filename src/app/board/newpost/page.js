@@ -9,7 +9,7 @@ export default function Board() {
     return (
         <div>
             <h4>자유게시판 글 작성</h4>
-            <div>
+            <div className="newpost-items">
                 <input
                     onChange={(e) => setTitle(e.target.value)}
                     placeholder="글 제목"
@@ -19,6 +19,7 @@ export default function Board() {
                     placeholder="글 내용"
                 />
                 <button
+                    className="text-white bg-green-700 hover:bg-green-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 mr-8"
                     onClick={() => {
                         fetch("/api/post/new", {
                             method: "POST",
